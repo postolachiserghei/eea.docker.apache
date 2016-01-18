@@ -19,9 +19,9 @@ RUN chown -R $UID:$UID /var/www
 
 EXPOSE 80
 
-ADD run-httpd.sh /run-httpd.sh
+ADD src/run-httpd.sh /run-httpd.sh
 RUN chmod -v +x /run-httpd.sh
-COPY reload.sh  /bin/reload
+COPY src/reload.sh  /bin/reload
 RUN chmod a+x /bin/reload
 
 CMD ["/run-httpd.sh"]
